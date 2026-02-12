@@ -2,6 +2,29 @@ const today = new Date();
 const day = today.getDate();
 const month = today.getMonth();
 const year = today.getFullYear();
+const months = [
+  "January","February","March","April","May","June",
+  "July","August","September","October","November","December"
+];
+document.getElementById("monthName").textContent=months[month];
+const days = new Date(year, month + 1, 0).getDate();
+const date=document.querySelector(".date-container")
+for(let i=1;i<=days;i++){
+    let div=document.createElement("div");
+    div.className="dates";
+    div.textContent=i;
+    date.appendChild(div);
+    if(i===day){
+      div.classList.add("today")
+      setTimeout(() => {
+      div.scrollIntoView({
+        behavior: "smooth",
+        inline: "center"
+      });
+    }, 100);
+    }
+     date.appendChild(div);
+}
 // Open popup
 document.querySelector(".btn").addEventListener("click", () => {
   document.getElementById("popup").style.display = "flex";
