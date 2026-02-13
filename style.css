@@ -75,6 +75,7 @@ body {
   background: #515052 !important;
   color: white;
   border: 3px solid rgb(21, 11, 11);
+  transform: scale(1.3);
 }
 /* ===== HABIT CARD ===== */
 .card {
@@ -105,7 +106,7 @@ body {
 }
 
 /* BUTTONS */
-.buttons button {
+.buttons{
   background: #333;
   border: none;
   color: white;
@@ -116,14 +117,28 @@ body {
   transition: 0.2s;
 }
 
-.buttons button:hover {
+.buttons:hover {
   background: orange;
 }
 
-.buttons button:active {
+.buttons:active {
   transform: scale(0.9);
 }
 
+.del-button{
+  background: #333;
+  border: 2px solid white;
+  color: white;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.del-button:hover {
+  background: red;
+}
 /* ===== HABIT GRID ===== */
 .grid {
   margin-top: 15px;
@@ -178,7 +193,32 @@ body {
   color: black;
   transform: scale(1.1);
 }
+.del-popup{
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
 
+}
+.del-popup-content{
+  background: rgb(121, 155, 218);
+  padding: 20px;
+  height: 30%;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+}
+#cancel,#ok{
+height: 40px;
+width: 80px;
+border-radius: 20%;
+font-size: 20px;
+}
 /* Popup Background */
 .popup {
   display: none;
@@ -190,6 +230,7 @@ body {
   background: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
+
 }
 
 /* Popup Box */
