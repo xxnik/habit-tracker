@@ -63,7 +63,7 @@ card.innerHTML = `
     </div>
       
     <div >
-      <button class="del-button"><i class="fa-regular fa-trash-can"></i></i></button>
+      <button class="del-button"><i class="fa-solid fa-trash"></i></button>
       <button class="buttons">✔</button>
     </div>
   </div>
@@ -195,6 +195,11 @@ function removeHabit(name) {
   localStorage.removeItem(monthKey);
 }
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("sw.js")
+    .then(() => console.log("Service Worker Registered"));
+}
 
 
 
